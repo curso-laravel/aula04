@@ -15,6 +15,13 @@ class CreateHeroisTable extends Migration
     {
         Schema::create('herois', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('nome',100);
+            $table->string('identidade_secreta',255);
+            $table->string('origem',255)->nullable();            
+            $table->enum('forca',['forte', 'media', 'fraca']);
+            $table->boolean('terraqueo');
+            $table->boolean('pode_voar');
+            $table->binary('foto')->nullable();
             $table->timestamps();
         });
     }

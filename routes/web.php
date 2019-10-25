@@ -22,5 +22,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::middleware('auth')->group(function(){
    Route::get('/usuarios', 'UsuarioController@index')->name('usuarios.list');
    Route::get('/usuarios2', 'UsuarioController@index2')->name('usuarios2.list');
+   
+   Route::get('/herois', 'HeroiController@index')->name('herois.list');
+   Route::get('/herois/novo', 'HeroiController@create')->name('herois.novo');
+   Route::post('/herois/salva-novo', 'HeroiController@store')->name('herois.salvanovo');
 });
+
+
 
